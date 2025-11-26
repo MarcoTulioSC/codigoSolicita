@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem Automática - Ouvidoria</title>
+   <link rel="stylesheet" href="style.css">
+  <script src="scriptjs.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- CAIXA 1 -->
+    <div class="container">
+      <h2>Gerador de Mensagem de Solicitação</h2>
+      <label for="codigo">Código da solicitação:</label>
+      <input type="text" class="codigo" placeholder="Ex: 918013" onkeypress="verificarEnter(event, this)">
+      <textarea class="mensagem" readonly>📌 Número da Solicitação de Reparo: 
+📅 Data de abertura: 
+⚙️ Veículo: 
+Descrição:</textarea>
+      <button onclick="copiarMensagem(this)">📋 Copiar Mensagem</button>
+    </div>
+
+    <!-- CAIXA 2 -->
+    <div class="container">
+      <h2></h2>
+      <label>Código da solicitação:</label>
+      <input type="text" class="codigo" placeholder="Ex: 918013" onkeypress="verificarEnter(event, this)">
+      <h2>Verificamos que já existe uma solicitação de reparo em andamento para este veículo, registrada anteriormente pelo mesmo motivo.</h2>
+      <textarea class="mensagem" readonly>📌 Número da Solicitação de Reparo: 
+📅 Data de abertura: 
+⚙️ Veículo: 
+⏳ Pedimos, por favor, que aguarde o andamento dessa solicitação.	
+✨ Muito obrigado e boa viagem! 🚍	
+</textarea>
+      <button onclick="copiarMensagem(this)">📋 Copiar Mensagem</button>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  
+</body>
+</html>
