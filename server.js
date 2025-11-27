@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+require("dotenv").config();
+console.log("SHEET_ID carregado no server:", process.env.SHEET_ID);
 const sheetsRoutes = require("./routes/sheetsRoutes");
 
 const app = express();
@@ -18,7 +20,9 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-const PORT = 4000;
+// 🔥 Porta ajustada para o Render
+const PORT = process.env.PORT || 4000;
+
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
