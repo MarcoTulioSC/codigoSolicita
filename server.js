@@ -1,5 +1,6 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
+
 const path = require("path");
 require("dotenv").config();
 console.log("SHEET_ID carregado no server:", process.env.SHEET_ID);
@@ -16,13 +17,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", sheetsRoutes);
 
 // 3️⃣ Rota padrão para / (opcional, mas útil)
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get('/', (req, res) => {
+  res.send('API funcionando!');
 });
+
 
 // 🔥 Porta ajustada para o Render
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log("Servidor rodando na porta " + PORT);
 });
+
